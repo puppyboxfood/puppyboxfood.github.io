@@ -1,1 +1,2 @@
-export const getLocale = () => (navigator.languages && navigator.languages.length) ? navigator.languages[0] : navigator.language
+const getNavigator = () => typeof navigator !== 'undefined' && navigator
+export const getLocale = () => (getNavigator().languages && getNavigator().languages.length) ? getNavigator().languages[0] : getNavigator().language

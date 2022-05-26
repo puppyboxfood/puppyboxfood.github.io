@@ -4,8 +4,10 @@ import products from "../data/products"
 
 const BoxContext = createContext(null)
 
+const getLocalStorage = () => typeof window !== 'undefined' && window.localStorage
+
 const persistStateToCookie = (state) => {
-  localStorage.setItem("my-custom-box", JSON.stringify(state.box))
+  getLocalStorage().setItem("my-custom-box", JSON.stringify(state.box))
   return state
 }
 
@@ -26,7 +28,7 @@ const boxReducer = (state, action) => {
 }
 
 export const BoxProvider = ({ children }) => {
-  const savedBox = localStorage.getItem("my-custom-box")
+  const savedBox = getLocalStorage().getItem("my-custom-box")
   const [state, dispatch] = useReducer(boxReducer, { products, box: savedBox ? JSON.parse(savedBox) : {} })
   const value = { state, dispatch }
 
