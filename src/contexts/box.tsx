@@ -7,7 +7,11 @@ const BoxContext = createContext(null)
 const getLocalStorage = () => typeof window !== 'undefined' && window.localStorage
 
 const persistStateToCookie = (state) => {
-  getLocalStorage().setItem("my-custom-box", JSON.stringify(state.box))
+  const localStorage = getLocalStorage()
+  if (localStorage) {
+    localStorage.setItem("my-custom-box", JSON.stringify(state.box))
+  }
+
   return state
 }
 
@@ -28,7 +32,8 @@ const boxReducer = (state, action) => {
 }
 
 export const BoxProvider = ({ children }) => {
-  const savedBox = getLocalStorage().getItem("my-custom-box")
+  const localStorage = getLocalStorage()
+  const savedBox = localStorage ? localStorage.getItem("my-custom-box") : null
   const [state, dispatch] = useReducer(boxReducer, { products, box: savedBox ? JSON.parse(savedBox) : {} })
   const value = { state, dispatch }
 
