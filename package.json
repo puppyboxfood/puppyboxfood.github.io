@@ -12,11 +12,15 @@
     "build": "gatsby build",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "deploy": "gatsby build --prefix-paths && gh-pages -d public"
   },
   "dependencies": {
+    "@headlessui/react": "^1.5.0",
+    "@heroicons/react": "^1.0.6",
     "@mdx-js/mdx": "^1.6.22",
     "@mdx-js/react": "^1.6.22",
+    "autoprefixer": "^10.4.4",
     "gatsby": "^4.12.1",
     "gatsby-plugin-image": "^2.12.1",
     "gatsby-plugin-manifest": "^4.12.1",
@@ -25,17 +29,26 @@
     "gatsby-plugin-react-helmet": "^5.12.1",
     "gatsby-plugin-sharp": "^4.12.1",
     "gatsby-plugin-sitemap": "^5.12.1",
-    "gatsby-source-filesystem": "^4.12.1",
+    "gatsby-source-filesystem": "^4.14.0",
     "gatsby-transformer-sharp": "^4.12.1",
+    "gatsby-transformer-yaml": "^4.14.0",
+    "gatsby-transformer-yaml-full": "^4.0.4",
+    "gatsby-yaml-full-import": "^4.0.4",
+    "js-yaml": "^4.1.0",
     "postcss": "^8.4.12",
     "react": "^17.0.1",
+    "react-cookie": "^4.1.1",
     "react-dom": "^17.0.1",
-    "react-helmet": "^6.1.0"
+    "react-helmet": "^6.1.0",
+    "react-scroll-parallax": "^3.1.0",
+    "tailwindcss": "^3.0.24",
+    "universal-cookie": "^4.0.4"
   },
   "devDependencies": {
     "@types/node": "^17.0.23",
     "@types/react": "^17.0.44",
     "@types/react-dom": "^17.0.15",
+    "gh-pages": "^4.0.0",
     "typescript": "^4.6.3"
   }
 }

@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.dot-flashing {
+  @apply bg-red-200;
+  @apply text-red-50;
+
+  position: relative;
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 5px;
+  animation: dotFlashing 1s infinite linear alternate;
+  animation-delay: .5s;
+}
+
+.dot-flashing::before, .dot-flashing::after {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  top: 0;
+}
+
+.dot-flashing::before {
+  @apply bg-red-200;
+  @apply text-red-50;
+
+  left: -12px;
+  width: 8px;
+  height: 8px;
+  border-radius: 5px;
+  animation: dotFlashing 1s infinite alternate;
+  animation-delay: 0s;
+}
+
+.dot-flashing::after {
+  @apply bg-red-200;
+  @apply text-red-50;
+
+  left: 12px;
+  width: 8px;
+  height: 8px;
+  border-radius: 5px;
+  animation: dotFlashing 1s infinite alternate;
+  animation-delay: 1s;
+}
+
+@keyframes dotFlashing {
+  0% {
+    @apply bg-red-200;
+  }
+  50%,
+  100% {
+    @apply bg-red-50;
+  }
+}

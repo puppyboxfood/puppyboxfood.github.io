@@ -1,0 +1,59 @@
+---
+id: a.dogs-have-emotions
+text: "Dogs have emotions"
+strikethroughIf: a.convinced-of-irrelevance-of-emotions
+next:
+  - id: q.do-you-believe-the-animals-you-eat-are-deprived-of-emotions
+    text: "Do you believe the animals you eat are devoid of emotions?"
+    options:
+      - id: a.other-animals-are-devoid-of-emotions
+        text: "Yes"
+        next:
+          - id: other-animals-are-devoid-of-emotions.0
+            text: "That's a common mistake many people make"
+          - id: other-animals-are-devoid-of-emotions.1
+            text: "We are so accustomed to seeing animals on farms"
+          - id: other-animals-are-devoid-of-emotions.2
+            text: "Literally doing nothing but to just stand there and to wait to be fed"
+          - id: other-animals-are-devoid-of-emotions.3
+            text: "But it's far from the truth, they can be as emotional as a dog"
+      - id: a.other-animals-are-not-devoid-of-emotions
+        text: "No"
+        next:
+          - id: other-animals-are-not-devoid-of-emotions.0
+            text: "Glad we could agree!"
+          - id: other-animals-are-not-devoid-of-emotions.1
+            text: "Many people believe farm animals are just empty shells"
+    next:
+      - id: other-animals-are-not-devoid-of-emotions.1
+        text: "Animals are sentient beings"
+      - id: other-animals-are-not-devoid-of-emotions.2
+        text: "Meaning, they are are able to perceive or feel things"
+      - id: other-animals-are-not-devoid-of-emotions.3
+        text: "They can experience a wide range of emotions such as joy, fear, love, despair, and grief"
+      - id: other-animals-are-not-devoid-of-emotions.4
+        text: "This has been officially recognised by the british government"
+        url: "https://www.gov.uk/government/news/animals-to-be-formally-recognised-as-sentient-beings-in-domestic-law"
+      - id: other-animals-are-not-devoid-of-emotions.5
+        text: "Here is a joyful cow"
+        image: "https://c.tenor.com/Gcswt8FRSoAAAAAd/game-cow.gif"
+      - id: other-animals-are-not-devoid-of-emotions.6
+        text: "Here is one experiencing fear and despair"
+        image: "https://i.makeagif.com/media/2-26-2019/zv5aWA.gif"
+      - id: other-animals-are-not-devoid-of-emotions.7
+        text: "It is no longer a debate if animals can or cannot have feelings"
+      - id: other-animals-are-not-devoid-of-emotions.7
+        text: "They do. And it isn't exclusive to dogs"
+      - id: q.will-it-stop-you-from-eating-other-emotional-beings
+        text: "Knowing all animals you eat experience emotions, the same as dogs do, will this stop you from eating meat?"
+        options:
+          - !include starting-to-think-it-is-immoral-to-eat-animals.yml
+          - !include eating-dog-meat-may-be-moral.yml
+          - id: a.convinced-of-irrelevance-of-emotions
+            text: "No, the ability to feel emotions is irrelevant"
+            next:
+              - id: convinced-of-irrelevance-of-emotions.0
+                text: "Alright! So being capable of experiencing emotions is irrelevant"
+              - id: convinced-of-irrelevance-of-emotions.1
+                text: "So what makes dogs so special that they deserve to be treated differently?"
+                goTo: q.what-is-special-about-dogs

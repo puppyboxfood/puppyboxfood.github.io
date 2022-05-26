@@ -1,0 +1,26 @@
+---
+id: q.should-culture-dictate-morals
+text: "Should culture dictate your morals?"
+options:
+  - id: a.cultures-should-dictate-morals
+    text: "Yes"
+    next:
+      - id: cultures-should-dictate-morals.0
+        text: "Cultures evolve all the time. Every new generation decide what to keep or ditch from older generations's culture"
+      - id: cultures-should-dictate-morals.1
+        text: "It was once culturally accepted that the poor should be the slave of the rich"
+      - id: cultures-should-dictate-morals.2
+        text: "Not long ago, your skin color would dictate the same fate"
+      - id: culture-should-dictate-morals.3
+        text: "It was culturally accepted that women belonged to men, and weren't as competent as they were"
+      - id: culture-should-dictate-morals.4
+        text: "In some other parts of the world, it is morally okay to eat dogs"
+      - !include is-it-moral-to-eat-dogs.yml
+  - id: a.convinced-of-irrelevance-of-culture
+    text: "No"
+    next:
+      - id: cultures-should-not-dictate-morals.0
+        text: "Absolutely"
+      - id: cultures-should-not-dictate-morals.1
+        text: "Therefore, if cutlure is not a an acceptable reason to not eat dogs, what is it that makes eating dogs immoral?"
+        goTo: q.what-is-special-about-dogs

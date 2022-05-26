@@ -1,0 +1,123 @@
+---
+id: a.dogs-are-intelligent
+text: "Dogs are intelligent"
+strikethroughIf: a.convinced-of-irrelevance-of-intelligence
+next:
+  - id: dogs-are-intelligent.0
+    text: "Can't argue against that statement"
+  - id: dogs-are-intelligent.1
+    text: "Dogs can be smart"
+    image: "https://media.giphy.com/media/UKkes2qN2T70s/giphy.gif"
+  - id: dogs-are-intelligent.2
+    text: "But they can also be dumb"
+    image: "https://media.giphy.com/media/pytb6SgEJuPGE/giphy.gif"
+  - id: dogs-are-intelligent.3
+    text: "Cows can also be smart"
+    image: "https://media3.giphy.com/media/hX35ltwtAAOdi/giphy-downsized.gif"
+  - id: dogs-are-intelligent.4
+    text: "Fish can also be smart"
+    image: "https://i.makeagif.com/media/2-22-2018/6LNiee.gif"
+  - id: dogs-are-intelligent.5
+    text: "Pigs are considered as smart, if not even smarter than dogs"
+    url: "https://www.dailymail.co.uk/sciencetech/article-3122303/Move-Lassie-IQ-tests-reveal-pigs-outsmart-dogs-chimpanzees.html"
+    image: "https://thumbs.gfycat.com/OddUnluckyArcticwolf-max-1mb.gif"
+  - id: dogs-are-intelligent.6
+    text: "The problem is that you are used to seeing dogs in environments they can thrive"
+  - id: dogs-are-intelligent.7
+    text: "Farmed animals are kept in conditions in which they cannot thrive"
+  - id: dogs-are-intelligent.8
+    text: "All animals are intelligent, you only choose to see intelligence in dogs"
+  - id: q.will-it-stop-you-from-eating-other-intelligent-species
+    text: "Will that stop you from eating other intelligent species?"
+    options:
+      - id: a.i-only-eat-less-intelligent-animals
+        text: "I only eat lesser intelligent animals"
+        next:
+          - id: i-only-eat-less-intelligent-animals.0
+            text: "As with humans, species have a range of intelligence"
+          - id: i-only-eat-less-intelligent-animals.1
+            text: "Also they belong to the same species, some individuals are less intelligent than others"
+          - id: i-only-eat-less-intelligent-animals.2
+            text: "Some of these individuals can be less intelligent than other animals of species considered less intelligent"
+          - id: i-only-eat-less-intelligent-animals.3
+            text: "Our dog farmers have artificially selected the lesser intelligent dogs of each breed of dogs"
+          - id: i-only-eat-less-intelligent-animals.4
+            text: "We can assure you any of the dogs we harvest are as, if not less intelligent than a cow"
+            options:
+              - id: a.eating-dumb-dogs-is-moral
+                text: "Eating dumb dogs is absolutely fine"
+                next:
+                  - id: eating-dumb-dogs-is-moral.0
+                    text: "Now that we have established that eating dumb animals is morally okay"
+                  - id: eating-dumb-dogs-is-moral.1
+                    text: "And that homosapiens is one of the many species belonging to the animal kingdom"
+                  - id: q.is-eating-cognitively-limited-humans-moral
+                    text: "Would it be moral to farm humans with mental illnesses that render them as cognitively capable as our sub-intelligent dogs?"
+                    next:
+                      - id: aliens-thought-experiment.0
+                        text: "Thought experiment time!"
+                      - id: aliens-thought-experiment.1
+                        text: "Imagine that aliens invade earth and capture us all"
+                      - id: aliens-thought-experiment.2
+                        text: "They are way more intelligent than we are"
+                      - id: aliens-thought-experiment.3
+                        text: "From their point of view, we might as well be cows in term of intelligence"
+                      - id: q.would-it-be-wrong-of-aliens-to-do-to-us-what-we-do-to-animals
+                        text: "Would it be wrong of them to do to us what we do to animals?"
+                        options:
+                          - id: a.aliens-can-farm-us
+                            text: "They can farm all humans"
+                            next:
+                              - id: q.do-you-believe-might-makes-right
+                                text: "Do you believe might makes right?"
+                                options:
+                                  - id: a.i-believe-might-makes-right
+                                    text: "Yes"
+                                  - id: a.might-does-not-make-right
+                                    text: "No"
+                          - id: a.wrong-of-aliens-to-farm-us
+                            text: "It would be wrong"
+                            next:
+                              - id: q.why-would-it-be-wrong-of-aliens-to-farm-us
+                                text: "Why?"
+                                options:
+                                  - id: a.we-are-god-children
+                                    text: "We are God's children"
+                                  - id: a.intelligence-matters
+                                    text: "Intelligence matters"
+                                    next:
+                                      - id: intelligence-matters.0
+                                        text: "Right... Okay!"
+                                      - id: intelligence-matters.1
+                                        text: "Looks like we have gone full circle"
+                                      - id: intelligence-matters.2
+                                        text: "To summarise where we are at:"
+                                      - id: intelligence-matters.3
+                                        text: "You believed it was wrong to eat dogs"
+                                      - id: intelligence-matters.4
+                                        text: "Convinced you it was okay to eat dumber dogs because intelligence does not matter"
+                                      - id: intelligence-matters.5
+                                        text: "But if a more intelligent species (like we are to animals) did this to us"
+                                      - id: intelligence-matters.6
+                                        text: "You would not approve because intelligence matter"
+                                      - id: intelligence-matters.7
+                                        text: "It sounds to me like you haven't put much thought into the morality of eating meat altogether"
+                    options:
+                      - id: a.eating-cognitively-limited-humans-is-okay
+                        text: "Yes"
+                      - id: a.eating-cognitively-limited-humans-is-not-okay
+                        text: "No"
+              - id: a.convinced-of-irrelevance-of-intelligence
+                text: "Still wrong! But I am not going to stop eating animals because they are as dumb, or more intelligent than your dogs"
+                next:
+                  - id: convinced-of-irrelevance-of-intelligence.0
+                    text: "Okay, so it sounds like you are saying intelligence isn't a good enough reason to not eat dogs"
+                  - id: convinced-of-irrelevance-of-intelligence.1
+                    text: "So what makes it immoral to not eat dumb dogs?"
+                    goTo: q.what-is-special-about-dogs
+      - id: a.convinced-of-irrelevance-of-intelligence
+        text: "I am not going to stop eating animals because they are intelligent"
+        next:
+          - id: convinced-of-irrelevance-of-intelligence.0
+            text: "If not intelligence, what is it that makes dog so special?"
+            goTo: q.what-is-special-about-dogs

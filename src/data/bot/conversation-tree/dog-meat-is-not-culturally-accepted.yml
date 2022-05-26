@@ -1,0 +1,6 @@
+---
+id: a.dog-meat-is-not-culturally-accepted
+strikethroughIf: a.convinced-of-irrelevance-of-culture
+text: "Eating dog is not part of my culture"
+next:
+  - !include should-culture-dictate-morals.yml

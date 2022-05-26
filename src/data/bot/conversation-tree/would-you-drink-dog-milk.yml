@@ -1,0 +1,40 @@
+id: q.would-you-drink-dog-milk
+text: "Would you drink dog milk?"
+options:
+  - id: a.i-would-drink-dog-milk
+    text: "Yes, why not!"
+    next:
+      - id: i-would-drink-dog-milk.0
+        text: "Excellent! PuppyBox will soon offer dog milk"
+      - id: i-would-drink-dog-milk.1
+        text: "Our suppliers will follow the same standards as the dairy industry"
+      - id: i-would-drink-dog-milk.2
+        text: "Our bitches (female dogs) are forcefully impregnated so they can give birth to a litter and start producing milk"
+      - id: i-would-drink-dog-milk.3
+        text: "The litter is separated from the mom at birth so we can harvest the milk for human consumption."
+      - id: i-would-drink-dog-milk.4
+        text: "The separation can be difficult for both the mother and her puppies, but don't worry, our bitches get used to it after their third or fourth litter"
+      - id: i-would-drink-dog-milk.5
+        text: "Puppies are isolated from one another so they can't get hurt during play time"
+      - id: i-would-drink-dog-milk.6
+        text: "It's a lonely life but they get used to it"
+      - id: i-would-drink-dog-milk.7
+        text: "Female puppies will be raised to become milk producing bitches"
+      - id: potential-veal-eater
+        dependsOn:
+          - a.eats-meat
+        messages:
+          - !include do-you-eat-veal.yml
+      - id: describe-male-puppies
+        dependsOn:
+          - a.no-meat
+        messages: !include puppy-veal.yml
+  - id: a.i-would-not-drink-dog-milk
+    text: "Ugh, no!"
+    next:
+      - id: i-would-not-drink-dog-milk.0
+        text: "Isn't it strange how we find it absolutely normal to drink milk from a cow"
+      - id: i-would-not-drink-dog-milk.1
+        text: "But milk from any other species sounds quite repulsive"
+      - id: i-would-not-drink-dog-milk.2
+        text: "Even drinking milk from our own species after a certain age can be considered weird"

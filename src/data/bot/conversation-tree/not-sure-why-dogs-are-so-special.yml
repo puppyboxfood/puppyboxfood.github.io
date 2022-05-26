@@ -1,0 +1,62 @@
+---
+id: a.not-sure-why-dogs-are-special
+text: "I'm not sure, it's a feeling I have"
+next:
+  - id: not-sure-why-dogs-are-special.0
+    text: "That's okay"
+  - id: not-sure-why-dogs-are-special.1
+    text: "We are told to think a certain way toward animals as we grow up"
+  - id: not-sure-why-dogs-are-special.2
+    text: "Some are pets and deserve to be cared for and protected"
+  - id: not-sure-why-dogs-are-special.3
+    text: "Others don't deserve any moral consideration, and can be slaughtered for our consumption"
+  - id: not-sure-why-dogs-are-special.4
+    text: "If you have time to spare, may I recommend you watch a video?"
+  - id: not-sure-why-dogs-are-special.5
+    text: "It explains exactly why you feel this way in great details"
+  - id: not-sure-why-dogs-are-special.6
+    text: "The first 10 minutes will cover enough if you are short on time"
+  - id: q.waiting-for-user-to-watch-f2-Z6sZwPHw
+    text: "Take your time, I'll be waiting so we can discuss further what you've watched"
+  - id: q.have-you-watched-f2-Z6sZwPHw
+    youtubeVideoId: f2-Z6sZwPHw
+    startTime: 15
+    next:
+      - id: watched-f2-Z6sZwPHw
+        dependsOn:
+          -
+            - a.watched-ten-mins-of-f2-Z6sZwPHw
+            - a.watched-all-of-f2-Z6sZwPHw
+        messages:
+          - id: watched-f2-Z6sZwPHw.0
+            text: "Nice! 🙌"
+          - id: watched-f2-Z6sZwPHw.1
+            text: "You may be wondering why this video was about veganism"
+          - id: watched-f2-Z6sZwPHw.2
+            text: "The argument in favour of eating dogs is very similar to the argument against eating any animal products"
+          - id: watched-f2-Z6sZwPHw.3
+            text: "It's a question of being consistent with our morals"
+          - id: watched-f2-Z6sZwPHw.4
+            text: "Either you agree all animals can be exploited for food"
+          - id: watched-f2-Z6sZwPHw.5
+            text: "Or no animals should be exploited for food"
+          - id: q.has-your-view-on-eating-dogs-changed
+            text: "Has your view on eating dogs changed?"
+            options:
+              - id: a.i-now-view-dogs-as-food
+                text: "I now view dogs as potential food source"
+              - id: a.my-view-has-not-changed
+                text: "I still think it is immoral to eat dogs, but moral to eat other animals"
+              - id: a.i-am-considering-becoming-vegetarian
+                text: "I am considering becoming vegetarian"
+                next:
+                  - !include would-you-drink-dog-milk.yml
+              - id: a.i-am-considering-becoming-vegan
+                text: "I am considering becoming vegan"
+    options:
+      - id: a.watched-ten-mins-of-f2-Z6sZwPHw
+        text: "Done! I watched the first 10 minutes"
+      - id: a.watched-all-of-f2-Z6sZwPHw
+        text: "Done! I watched it all"
+      - id: a.did-not-watch-f2-Z6sZwPHw
+        text: "I did not watch it..."

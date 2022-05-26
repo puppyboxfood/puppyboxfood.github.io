@@ -1,0 +1,112 @@
+---
+id: a.meat-is-tasty
+text: "I love the taste of non-dog meat!"
+next:
+  - id: meat-is-tasty.0
+    text: "Of course it is! And so is dog meat! Actually, some of our customers have said dog meat is even tastier than anything else they have eaten before!"
+  - id: meat-is-tasty.1
+    text: "Here is a thought experiment for you"
+  - id: meat-is-tasty.2
+    text: "Agree or disagree with the following statements I am going to show you"
+  - id: q.is-it-okay-to-punch-a-person
+    text: "It is okay to walk up to a person to punch them in the head if it gives you sensory pleasure"
+    image: "http://78.media.tumblr.com/6e57e03c2add9fe1531cb95122c929a0/tumblr_p6n0klCa5W1qep9hto1_500.gif"
+    options:
+      - id: a.okay-to-punch-person
+        text: "Yes, punch the person"
+      - id: a.not-okay-to-punch-person
+        text: "No, don't punch the person"
+    next:
+      - id: q.is-it-okay-to-punch-bag
+        text: "It is okay to punch a punching bag if it gives you sensory pleasure"
+        image: "https://c.tenor.com/lHEeA3u57fYAAAAM/goat-ram.gif"
+        options:
+          - id: a.okay-to-punch-bag
+            text: "Yes, punch the bag"
+          - id: a.not-okay-to-punch-bag
+            text: "No, don't punch the bag"
+        next:
+          - id: q.is-it-okay-to-punch-dog
+            text: "It is okay to walk up to a dog and punch them in the head if it gives you sensory pleasure"
+            image: "https://media0.giphy.com/media/13ByqbM0hgfN7y/giphy-downsized-large.gif"
+            options:
+              - id: a.okay-to-punch-dog
+                text: "Yes, punch the dog"
+              - id: a.not-okay-to-punch-dog
+                text: "No, don't punch the dog"
+            next:
+              - id: q.is-it-okay-to-punch-pig
+                text: "It is okay to walk up to a pig and punch them in the head if it gives you sensory pleasure"
+                image: "https://64.media.tumblr.com/f354271468b4447a0b168637840a34ff/tumblr_nnn59s2qJT1tjhypeo1_500.gifv"
+                options:
+                  - id: a.okay-to-punch-pig
+                    text: "Yes, punch the pig"
+                  - id: a.not-okay-to-punch-pig
+                    text: "No, don't punch the pig"
+                next:
+                  - id: people-dont-deserve-moral-worth
+                    messages:
+                      - id: people-dont-deserve-moral-worth.0
+                        text: "Do you believe people don't deserve moral worth?"
+                    dependsOn:
+                      - a.okay-to-punch-person
+                  - id: only-people-and-dogs-deserving-of-moral-worth
+                    messages:
+                      - id: q.do-you-believe-animals-are-sentient
+                        text: "Do you believe animals are sentient?"
+                        options:
+                          - id: a.all-animals-are-sentient
+                            text: "Yes"
+                            next:
+                              - id: q.whats-the-difference-between-a-dog-and-pig
+                                text: "So what makes it okay to inflict pain to a pig, but not a dog?"
+                                options:
+                                  - id: a.pigs-are-not-cute
+                                    text: "Pigs aren't as cute"
+                                  - id: a.pigs-are-food
+                                    text: "Pigs are bred for food"
+                                  - id: a.dont-care-about-pigs
+                                    text: "I don't care about pigs"
+                          - id: a.only-some-animals-are-sentient
+                            text: "No, only some (such as dogs)"
+                          - id: a.no-animals-are-sentient
+                            text: "No"
+                        next:
+                          - id: proof-of-animal-sentience
+                            messages:
+                              - id: proof-of-animal-sentience.0
+                                text: "Whale hello there 🐳"
+                            dependsOn:
+                              -
+                                - a.no-animals-are-sentient
+                                - a.only-some-animals-are-sentient
+                    dependsOn:
+                      - a.not-okay-to-punch-dog
+                      - a.okay-to-punch-pig
+                  - id: dont-punch-sentient-beings
+                    messages:
+                      - id: dont-punch-sentient-beings.0
+                        text: "Most people, like yourself, assign moral worth to people and animals. Not just people and dogs."
+                      - id: dont-punch-sentient-beings.1
+                        text: "Even animals we see as food are deserving of moral worth"
+                      - id: q.what-is-the-scale-of-farmed-animals-suffering
+                        text: "On a scale from 1 to 10, how much suffering do you think farm animals experience from the day they are born, to the day they are slaughtered?"
+                        hint: "Where 1 means \"Don't suffer\" and 10 means  \"Suffer greatly\""
+                        range:
+                          min: 1
+                          max: 10
+                          triggers:
+                            4:
+                              - id: specific.1
+                                text: "4 or below"
+                            6:
+                              - id: specific.2
+                                text: "Between 5 and 6"
+                            10:
+                              - id: specific.3
+                                text: "Between 7 and 10"
+                    dependsOn:
+                      - a.not-okay-to-punch-pig
+                      - a.not-okay-to-punch-dog
+                      - a.not-okay-to-punch-person
+                      - a.okay-to-punch-bag

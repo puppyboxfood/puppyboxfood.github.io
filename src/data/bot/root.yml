@@ -1,0 +1,466 @@
+---
+meatIsTasty: &meatIsTasty
+  id: a.meat-is-tasty
+  text: I love the taste of non-dog meat!
+  next:
+    - id: meat-is-tasty.0
+      text: Of course it is! And so is dog meat! Actually, some of our customers have said dog meat is even tastier than anything else they have eaten before!
+    - id: meat-is-tasty.1
+      text: Here is a thought experiment for you
+    - id: meat-is-tasty.2
+      text: Agree or disagree with the following statements I am going to show you
+    - id: q.is-it-okay-to-punch-a-person
+      text: It is okay to walk up to a person to punch them in the head, if it gives you sensory pleasure
+      image: http://78.media.tumblr.com/6e57e03c2add9fe1531cb95122c929a0/tumblr_p6n0klCa5W1qep9hto1_500.gif
+      options:
+        - id: a.okay-to-punch-person
+          text: Yes, punch the person
+        - id: a.not-okay-to-punch-person
+          text: No, don't punch the person
+      next:
+        - id: q.is-it-okay-to-punch-bag
+          text: It is okay to punch a punching bag if it gives you sensory pleasure
+          image: https://c.tenor.com/lHEeA3u57fYAAAAM/goat-ram.gif
+          options:
+            - id: a.okay-to-punch-bag
+              text: Yes, punch the bag
+            - id: a.not-okay-to-punch-bag
+              text: No, don't punch the bag
+          next:
+            - id: q.is-it-okay-to-punch-dog
+              text: It is okay to walk up to a dog and punch them in the head if it gives you sensory pleasure
+              image: https://media0.giphy.com/media/13ByqbM0hgfN7y/giphy-downsized-large.gif
+              options:
+                - id: a.okay-to-punch-dog
+                  text: Yes, punch the dog
+                - id: a.not-okay-to-punch-dog
+                  text: No, don't punch the dog
+              next:
+                - id: q.is-it-okay-to-punch-pig
+                  text: It is okay to walk up to a pig and punch them in the head if it gives you sensory pleasure
+                  image: https://64.media.tumblr.com/f354271468b4447a0b168637840a34ff/tumblr_nnn59s2qJT1tjhypeo1_500.gifv
+                  options:
+                    - id: a.okay-to-punch-pig
+                      text: Yes, punch the pig
+                    - id: a.not-okay-to-punch-pig
+                      text: No, don't punch the pig
+                  next:
+                    - id: people-dont-deserve-moral-worth
+                      messages:
+                        - id: people-dont-deserve-moral-worth.0
+                          text: Do you believe people don't deserve moral worth?
+                      dependsOn:
+                        - a.okay-to-punch-person
+                    - id: only-people-and-dogs-deserving-of-moral-worth
+                      messages:
+                        - id: q.do-you-believe-animals-are-sentient
+                          text: Do you believe animals are sentient?
+                          options:
+                            - id: a.all-animals-are-sentient
+                              text: Yes
+                              next:
+                                - id: q.whats-the-difference-between-a-dog-and-pig
+                                  text: So what makes it okay to inflict pain to a pig, but not a dog?
+                                  options:
+                                    - id: a.pigs-are-not-cute
+                                      text: Pigs aren't as cute
+                                    - id: a.pigs-are-food
+                                      text: Pigs are bred for food
+                                    - id: a.dont-care-about-pigs
+                                      text: I don't care about pigs
+                            - id: a.only-some-animals-are-sentient
+                              text: No, only some (such as dogs)
+                            - id: a.no-animals-are-sentient
+                              text: No
+                          next:
+                            - id: proof-of-animal-sentience
+                              messages:
+                                - id: proof-of-animal-sentience.0
+                                  text: Whale hello there 🐳
+                              dependsOn:
+                                -
+                                  - a.no-animals-are-sentient
+                                  - a.only-some-animals-are-sentient
+                      dependsOn:
+                        - a.not-okay-to-punch-dog
+                        - a.okay-to-punch-pig
+                    - id: dont-punch-sentient-beings
+                      messages:
+                        - id: dont-punch-sentient-beings.0
+                          text: Most people, like yourself, assign moral worth to people and animals. Not just people and dogs.
+                        - id: dont-punch-sentient-beings.1
+                          text: Even animals we see as food are deserving of moral worth
+                        - id: q.what-is-the-scale-of-farmed-animals-suffering
+                          text: On a scale from 1 to 10, how much suffering do you think farm animals experience from the day they are born, to the day they are slaughtered?
+                          hint: Where 1 means "Don't suffer" and 10 means  "Suffer greatly"
+                          range:
+                            min: 1
+                            max: 10
+                            triggers:
+                              4:
+                                - id: specific.1
+                                  text: 4 or below
+                              6:
+                                - id: specific.2
+                                  text: Between 5 and 6
+                              10:
+                                - id: specific.3
+                                  text: Between 7 and 10
+                      dependsOn:
+                        - a.not-okay-to-punch-pig
+                        - a.not-okay-to-punch-dog
+                        - a.not-okay-to-punch-person
+                        - a.okay-to-punch-bag
+
+isItMoralToEatDogs: &isItMoralToEatDogs
+  id: q.is-it-immoral-to-eat-dogs
+  text: Do you believe it is immoral to eat dogs?
+  options:
+    - id: a.it-is-immoral-to-eat-dogs
+      text: Absolutely!
+    - id: a.it-is-immortal-to-eat-animals
+      text: Hm... I am starting to think it is immoral to eat any animals
+    - id: a.it-is-moral-to-eat-dogs
+      text: Actually... You may have a point, eating dogs could be moral
+      next:
+        - id: it-is-moral-to-eat-dogs.0
+          text: Exactly. It's either that, OR it is immoral to slaughter animals. What's important is to be consistent if your moral beliefs.
+        - id: q.why-do-you-eat-meat
+          text: Before you rush to try dog meat, let's make sure you understand why you eat meat
+          options:
+            - *meatIsTasty
+
+shouldCulturesDictateMorals: &shouldCulturesDictateMorals
+  id: q.should-culture-dictate-morals
+  text: Should cultures dictate morals?
+  options:
+    - id: a.cultures-should-dictate-morals
+      text: Yes
+      next:
+        - id: cultures-should-dictate-morals.0
+          text: Cultures evolve all the time. Every new generation decide what to keep or ditch from older generations's culture
+        - id: cultures-should-dictate-morals.1
+          text: It was once culturally accepted that the poor should be the slave of the rich
+        - id: cultures-should-dictate-morals.2
+          text: Not long ago, your skin color would dictate the same fate
+        - id: culture-should-dictate-morals.3
+          text: It was culturally accepted that women belonged to men, and weren't as competent as they were
+        - id: culture-should-dictate-morals.4
+          text: In some other parts of the world, it is morally okay to eat dogs
+        - *isItMoralToEatDogs
+    - id: a.cultures-should-not-dictate-morals
+      text: No
+
+dogsAreManBestFriends: &dogsAreManBestFriends
+  id: a.dogs-are-man-best-friends
+  text: It's different, dogs are man's best friends
+  next:
+    - id: dogs-are-man-best-friends.0
+      text: For you and many other people, your culture dicates that it is morally okay to breed and slaughter a cow for food, but not a dog
+    - id: dogs-are-man-best-friends.1
+      text: But in other cultures, it is immoral to slaughter a cow
+    - *shouldCulturesDictateMorals
+
+dogsArePets: &dogsArePets
+  id: a.dogs-are-pets
+  text: Dogs are pets
+  next:
+    - id: dogs-are-pets.0
+      text: Some dogs are pets. Some are bred for vivisection. Other are born straight.
+    - id: dogs-are-pets.1
+      text: Our dogs are reared for their meat and certified not-a-pet. They are bred on farms and tagged at birth. When caught in the wild, they are checked for any micro-chip.
+    - id: dogs-are-pets.2
+      text: Some pigs are pets, and not bacon
+      image: https://media.yourdailydish.com/wp-content/uploads/2016/04/Pig.gif?tr=dpr-3,c-at_max,w-450
+    - id: dogs-are-pets.3
+      text: Some chickens are pets, and not nuggets
+      image: https://i.gifer.com/embedded/download/Y7rl.gif
+    - id: dogs-are-pets.4
+      text: Some cows are pets, and not steak
+      image: https://c.tenor.com/WiZww-RTdHQAAAAd/cow-pet.gif
+    - id: dogs-are-pets.5
+      text: Give any animal time, care, compassion, and they likely will become your best friend. This trait isn't unique to dogs.
+    - id: q.will-it-stop-you-from-eating-other-s-pets
+      text: Is that enough of an excuse to stop you from eating other animals because they are pets in the eyes of other people?
+      options:
+        - *dogsAreManBestFriends
+
+dogsAreIntelligent: &dogsAreIntelligent
+  id: a.dogs-are-intelligent
+  text: Dogs are intelligent
+
+dogsHaveEmotions: &dogsHaveEmotions
+  id: a.dogs-have-emotions
+  text: Dogs have emotions
+
+dogMeatIsNotCulturallyAccepted: &dogMeatIsNotCulturallyAccepted
+  id: a.dog-meat-is-not-culturally-accepted
+  text: Eating dog is not part of my culture
+  next:
+    - *shouldCulturesDictateMorals
+
+
+puppyVeal: &puppyVeal
+  - id: puppy-veal.0
+    text: Male puppies are a waste product to the dog dairy farms, so they are either killed at birth, or reared for puppy veal
+  - id: puppy-veal.1
+    text: Puppy veal is so tender it pretty much melts in your mouth
+  - id: puppy-veal.2
+    text: You are supporting the processing of such products by consuming dairy
+  - id: puppy-veal.3
+    text: So you might as well enjoy it!
+
+doYouEatVeal: &doYouEatVeal
+  id: q.do-you-eat-veal
+  text: Do you eat veal by any chance?
+  next:
+    - id: puppy-veal
+      dependsOn:
+        -
+          - a.i-eat-veal
+          - a.i-dont-eat-veal
+      messages: *puppyVeal
+  options:
+    - id: a.i-eat-veal
+      text: Yes
+      next:
+        - id: i-eat-veal.1
+          text: Great, you're going to love this!
+    - id: a.i-dont-eat-veal
+      text: No
+      next:
+        - id: i-dont-eat-veal.0
+          text: Aww, that's a shame
+
+wouldYouDrinkDogMilk: &wouldYouDrinkDogMilk
+  id: q.would-you-drink-dog-milk
+  text: Would you drink dog milk?
+  options:
+    - id: a.i-would-drink-dog-milk
+      text: Yes, why not!
+      next:
+        - id: i-would-drink-dog-milk.0
+          text: Excellent! PuppyBox will soon offer dog milk
+        - id: i-would-drink-dog-milk.1
+          text: Our suppliers will follow the same standards as the dairy industry
+        - id: i-would-drink-dog-milk.2
+          text: Our bitches (female dogs) are forcefully impregnated so they can give birth to a litter and start producing milk
+        - id: i-would-drink-dog-milk.3
+          text: The litter is separated from the mom at birth so we can harvest the milk for human consumption.
+        - id: i-would-drink-dog-milk.4
+          text: The separation can be difficult for both the mother and her puppies, but don't worry, our bitches get used to it after their third or fourth litter
+        - id: i-would-drink-dog-milk.5
+          text: Puppies are isolated from one another so they can't get hurt during play time
+        - id: i-would-drink-dog-milk.6
+          text: It's a lonely life but they get used to it
+        - id: i-would-drink-dog-milk.7
+          text: Female puppies will be raised to become milk producing bitches
+        - id: potential-veal-eater
+          dependsOn:
+            - a.eats-meat
+          messages:
+            - *doYouEatVeal
+        - id: describe-male-puppies
+          dependsOn:
+            - a.no-meat
+          messages: *puppyVeal
+
+    - id: a.i-would-not-drink-dog-milk
+      text: Ugh, no!
+      next:
+        - id: q.whats-wrong-with-dog-milk
+          text: What's wrong with dog milk?
+          options:
+            - id: a.it-sounds-disgusting
+
+notSureWhyDogsAreSpecial: &notSureWhyDogsAreSpecial
+  id: a.not-sure-why-dogs-are-special
+  text: I'm not sure, it's a feeling I have
+  next:
+    - id: not-sure-why-dogs-are-special.0
+      text: That's okay
+    - id: not-sure-why-dogs-are-special.1
+      text: We are told to think a certain way toward animals as we grow up
+    - id: not-sure-why-dogs-are-special.2
+      text: If you have time to spare, may I recommend you watch a video?
+    - id: not-sure-why-dogs-are-special.3
+      text: It explains exactly why you feel this way in great details
+    - id: not-sure-why-dogs-are-special.4
+      text: The first 10 minutes will cover enough if you are short on time
+    - id: q.waiting-for-user-to-watch-f2-Z6sZwPHw
+      text: Take your time, I'll be waiting so we can discuss further what you've watched
+    - id: q.have-you-watched-f2-Z6sZwPHw
+      youtubeVideoId: f2-Z6sZwPHw
+      next:
+        - id: watched-f2-Z6sZwPHw
+          messages:
+            - id: watched-f2-Z6sZwPHw.0
+              text: Nice! 🙌
+            - id: watched-f2-Z6sZwPHw.1
+              text: You may be wondering why this video was about veganism
+            - id: watched-f2-Z6sZwPHw.2
+              text: The argument in favour of eating dogs is very similar to the argument against eating any animal products
+            - id: watched-f2-Z6sZwPHw.3
+              text: It's a question of being consistent with our morals
+            - id: watched-f2-Z6sZwPHw.4
+              text: Either you agree all animals can be exploited for food
+            - id: watched-f2-Z6sZwPHw.5
+              text: Or no animals should be exploited for food
+            - id: q.has-your-view-on-eating-dogs-changed
+              text: Has your view on eating dogs changed?
+              options:
+                - id: a.i-now-view-dogs-as-food
+                  text: I now view dogs as potential food source
+                - id: a.my-view-has-not-changed
+                  text: I still think it is immoral to eat dogs, but moral to eat other animals
+                - id: a.i-am-considering-becoming-vegetarian
+                  text: I am considering becoming vegetarian
+                  next:
+                    - *wouldYouDrinkDogMilk
+                - id: a.i-am-considering-becoming-vegan
+                  text: I am considering becoming vegan
+          dependsOn:
+            -
+              - a.watched-ten-mins-of-f2-Z6sZwPHw
+              - a.watched-all-of-f2-Z6sZwPHw
+      options:
+        - id: a.watched-ten-mins-of-f2-Z6sZwPHw
+          text: Done! I watched the first 10 minutes
+        - id: a.watched-all-of-f2-Z6sZwPHw
+          text: Done! I watched it all
+        - id: a.did-not-watch-f2-Z6sZwPHw
+          text: I did not watch it...
+
+whatMakesDogsSoSpecial: &whatMakesDogsSoSpecial
+  id: q.what-is-special-about-dogs
+  text: Let's figure out what makes dogs so special
+  options:
+    - *dogsArePets
+    - *dogsAreIntelligent
+    - *dogsHaveEmotions
+    - *dogMeatIsNotCulturallyAccepted
+    - *notSureWhyDogsAreSpecial
+
+chat:
+- id: intro.0
+  text: Hiya! 👋
+- id: intro.1
+  text: I am here to help you understand why dog meat is as ethical as beef, pork, chicken, or fish
+- id: q.do-you-eat-meat
+  text: Do you eat meat?
+  options:
+    - id: a.eats-meat
+      text: Yes
+      next:
+        - id: eats-meat.0
+          text: Pigs, cows, chickens, lambs, fish, and even dogs
+        - id: eats-meat.1
+          text: They are all meat!  As an omnivore, this shouldn't be an issue
+        - *whatMakesDogsSoSpecial
+    - id: a.no-meat
+      text: No
+      next:
+        - id: q.do-you-eat-dairy-and-or-egg
+          text: Do you consume dairy?
+          options:
+            - id: a.consumes-dairy
+              text: Yes
+              next:
+                - *wouldYouDrinkDogMilk
+            - id: a.does-not-consume-dairy
+              text: No
+              next:
+                - id: q.what-about-eggs
+                  text: What about eggs?
+                  options:
+                    - id: a.consumes-eggs
+                      text: Yes
+                    - id: a.does-not-consume-eggs
+                      text: No
+                      next:
+                        - id: q.are-you-a-vegan
+                          text: Are you a vegan?
+                          options:
+                            - id: a.is-vegan
+                              text: I am vegan
+                              next:
+                                - id: is-vegan.1
+                                  text: Well, that's awkward...
+                                - id: is-vegan.2
+                                  text: So are we!
+                                  image: https://media.giphy.com/media/dyL2RG21cBNmalqz8M/giphy.gif
+                                - id: is-vegan.3
+                                  text: Activism through satire
+                                - id: is-vegan.4
+                                  text: "Make sure to follow us:"
+                                - id: is-vegan.5
+                                  text: On twitter
+                                  url: "https://twitter.com/puppyboxfood"
+                                - id: is-vegan.6
+                                  text: On instagram
+                                  url: "https://instagram.com/puppyboxfood"
+                                - id: is-vegan.7
+                                  text: Every share increases the chances of a dog lover to come across our content and have their habbits and views challenged!
+                                - id: is-vegan.8
+                                  text: "All that to say: nothing to worry about, this is satire and fake. No dogs are being reared for meat."
+                                - id: is-vegan.9
+                                  text: ❤️🐶
+                            - id: a.is-not-vegan
+                              text: I am not
+                              next:
+                                - id: is-not-vegan.0
+                                  text: "Would you agree this is the way of living you choose to follow:"
+                                - id: q.do-you-agree-with-definition-of-veganism
+                                  text: We should seek to exclude—as far as is possible and practicable—all forms of exploitation of, and cruelty to, animals for food, clothing or any other purpose; and by extension, promotes the development and use of animal-free alternatives for the benefit of animals, humans and the environment. In dietary terms it denotes the practice of dispensing with all products derived wholly or partly from animals.
+                                  options:
+                                    - id: a.agree-with-veganism-definition
+                                      text: That's how I live
+                                      next:
+                                        - id: agree-with-veganism-defintion.0
+                                          text: That is the definition of veganism
+                                          url: "https://www.vegansociety.com/go-vegan/definition-veganism"
+                                        - id: agree-with-veganism-defintion.1
+                                          text: Also you don't label yourself as vegan
+                                        - id: agree-with-veganism-defintion.2
+                                          text: You are living as a vegan
+                                        - id: agree-with-veganism-defintion.3
+                                          text: So there is no way for us to convince you dog meat is ethical
+                                        - id: agree-with-veganism-defintion.4
+                                          text: Maybe you should watch this video to see if you are actually vegan
+                                        - id: agree-with-veganism-defintion.5
+                                          youtubeVideoId: Z3u7hXpOm58
+                                        - id: agree-with-veganism-defintion.6
+                                          text: Anyway, PuppyBox isn't real
+                                        - id: agree-with-veganism-defintion.7
+                                          text: It's a website to make people think twice about the food they choose to eat
+                                        - id: agree-with-veganism-defintion.8
+                                          text: And that there is no real difference between eating a dog or a pig, cow, chicken
+                                        - id: agree-with-veganism-defintion.9
+                                          text: If you still believe you aren't vegan, but interested to give it a shot
+                                        - id: agree-with-veganism-defintion.10
+                                          text: You should try challenge22, it's free!
+                                        - id: agree-with-veganism-defintion.11
+                                          text: "https://challenge22.com"
+                                          url: "https://challenge22.com"
+                                        - id: agree-with-veganism-defintion.12
+                                          text: Good luck!
+                                    - id: a.disagree-with-veganism-definition
+                                      text: I disagree with this statement
+                                      next:
+                                        - id: q.do-you-believe-dogs-deserve-special-treatment
+                                          text: Do you believe dogs deserve special treatment?
+                                          options:
+                                            - id: a.dogs-deserve-special-treatment
+                                              text: Dogs deserve special treatment over pigs, cows, and/or chickens
+                                            - id: a.dogs-dont-deserve-special-treatment
+                                              text: No, they don't
+                                              next:
+                                                - id: q.do-you-agree-with-dogs-reared-for-meat
+                                                  text: Do you agree with farming dogs for meat?
+                                                  options:
+                                                    - id: a.agree-with-dogs-reared-for-meat
+                                                      text: Yes
+                                                    - id: a.disagree-with-dogs-reared-for-meat
+                                                      text: No
+                                                      next:
+                                                        - *whatMakesDogsSoSpecial

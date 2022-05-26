@@ -1,0 +1,8 @@
+id: a.dogs-are-man-best-friends
+text: "It's different, dogs are man's best friends"
+next:
+  - id: dogs-are-man-best-friends.0
+    text: "For you and many other people, your culture dicates that it is morally okay to breed and slaughter a cow for food, but not a dog"
+  - id: dogs-are-man-best-friends.1
+    text: "But in other cultures, it is immoral to slaughter a cow"
+  - !include should-culture-dictate-morals.yml

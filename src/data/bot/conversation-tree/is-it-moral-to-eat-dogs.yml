@@ -1,0 +1,17 @@
+---
+id: q.is-it-immoral-to-eat-dogs
+text: "Do you believe it is immoral to eat dogs?"
+options:
+  - id: a.it-is-immoral-to-eat-dogs
+    text: "Absolutely!"
+  - id: a.it-is-immortal-to-eat-animals
+    text: "Hm... I am starting to think it is immoral to eat any animals"
+  - id: a.it-is-moral-to-eat-dogs
+    text: "Actually... You may have a point, eating dogs could be moral"
+    next:
+      - id: it-is-moral-to-eat-dogs.0
+        text: "Exactly. It's either that, OR it is immoral to slaughter animals. What's important is to be consistent if your moral beliefs."
+      - id: q.why-do-you-eat-meat
+        text: "Before you rush to try dog meat, let's make sure you understand why you eat meat"
+        options:
+          - !include meat-is-tasty.yml

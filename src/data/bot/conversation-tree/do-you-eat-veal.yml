@@ -1,0 +1,21 @@
+---
+id: q.do-you-eat-veal
+text: "Do you eat veal by any chance?"
+next:
+  - id: puppy-veal
+    dependsOn:
+      -
+        - a.i-eat-veal
+        - a.i-dont-eat-veal
+    messages: !include puppy-veal.yml
+options:
+  - id: a.i-eat-veal
+    text: "Yes"
+    next:
+      - id: i-eat-veal.1
+        text: "Great, you're going to love this!"
+  - id: a.i-dont-eat-veal
+    text: "No"
+    next:
+      - id: i-dont-eat-veal.0
+        text: "Aww, that's a shame"

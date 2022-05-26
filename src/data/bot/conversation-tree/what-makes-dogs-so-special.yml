@@ -1,0 +1,9 @@
+---
+id: q.what-is-special-about-dogs
+checkpoint: true
+options:
+  - !include dogs-are-pets.yml
+  - !include dogs-are-intelligent.yml
+  - !include dogs-have-emotions.yml
+  - !include dog-meat-is-not-culturally-accepted.yml
+  - !include not-sure-why-dogs-are-so-special.yml

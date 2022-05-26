@@ -1,0 +1,125 @@
+---
+- id: intro.0
+  text: "Hiya! 👋"
+- id: intro.1
+  text: "I am here to help you understand why dog meat is as ethical as beef, pork, chicken, or fish"
+- id: q.do-you-eat-meat
+  text: "Do you eat meat?"
+  options:
+    - id: a.eats-meat
+      text: "Yes"
+      next:
+        - id: eats-meat.0
+          text: "Pigs, cows, chickens, lambs, fish, and even dogs"
+        - id: eats-meat.1
+          text: "They are all meat!  As an omnivore, this shouldn't be an issue"
+        - id: eats-meat.2
+          text: "Let's figure out what makes dogs so special"
+        - !include what-makes-dogs-so-special.yml
+    - id: a.no-meat
+      text: "No"
+      next:
+        - id: q.do-you-eat-dairy-and-or-egg
+          text: "Do you consume dairy?"
+          options:
+            - id: a.consumes-dairy
+              text: "Yes"
+              next:
+                - !include would-you-drink-dog-milk.yml
+            - id: a.does-not-consume-dairy
+              text: "No"
+              next:
+                - id: q.what-about-eggs
+                  text: "What about eggs?"
+                  options:
+                    - id: a.consumes-eggs
+                      text: "Yes"
+                    - id: a.does-not-consume-eggs
+                      text: "No"
+                      next:
+                        - id: q.are-you-a-vegan
+                          text: "Are you a vegan?"
+                          options:
+                            - id: a.is-vegan
+                              text: "I am vegan"
+                              next:
+                                - id: is-vegan.1
+                                  text: "Well, that's awkward..."
+                                - id: is-vegan.2
+                                  text: "So are we!"
+                                  image: "https://media.giphy.com/media/dyL2RG21cBNmalqz8M/giphy.gif"
+                                - id: is-vegan.3
+                                  text: "Activism through satire"
+                                - id: is-vegan.4
+                                  text: "Make sure to follow us:"
+                                - id: is-vegan.5
+                                  text: "On twitter"
+                                  url: "https://twitter.com/puppyboxfood"
+                                - id: is-vegan.6
+                                  text: "On instagram"
+                                  url: "https://instagram.com/puppyboxfood"
+                                - id: is-vegan.7
+                                  text: "Every share increases the chances of a dog lover to come across our content and have their habbits and views challenged!"
+                                - id: is-vegan.8
+                                  text: "All that to say: nothing to worry about, this is satire and fake. No dogs are being reared for meat."
+                                - id: is-vegan.9
+                                  text: "❤️🐶"
+                            - id: a.is-not-vegan
+                              text: "I am not"
+                              next:
+                                - id: is-not-vegan.0
+                                  text: "Would you agree this is the way of living you choose to follow:"
+                                - id: q.do-you-agree-with-definition-of-veganism
+                                  text: "We should seek to exclude—as far as is possible and practicable—all forms of exploitation of, and cruelty to, animals for food, clothing or any other purpose; and by extension, promotes the development and use of animal-free alternatives for the benefit of animals, humans and the environment. In dietary terms it denotes the practice of dispensing with all products derived wholly or partly from animals."
+                                  options:
+                                    - id: a.agree-with-veganism-definition
+                                      text: "That's how I live"
+                                      next:
+                                        - id: agree-with-veganism-defintion.0
+                                          text: "That is the definition of veganism"
+                                          url: "https://www.vegansociety.com/go-vegan/definition-veganism"
+                                        - id: agree-with-veganism-defintion.1
+                                          text: "Also you don't label yourself as vegan"
+                                        - id: agree-with-veganism-defintion.2
+                                          text: "You are living as a vegan"
+                                        - id: agree-with-veganism-defintion.3
+                                          text: "So there is no way for us to convince you dog meat is ethical"
+                                        - id: agree-with-veganism-defintion.4
+                                          text: "Maybe you should watch this video to see if you are actually vegan"
+                                        - id: agree-with-veganism-defintion.5
+                                          youtubeVideoId: Z3u7hXpOm58
+                                        - id: agree-with-veganism-defintion.6
+                                          text: "Anyway, PuppyBox isn't real"
+                                        - id: agree-with-veganism-defintion.7
+                                          text: "It's a website to make people think twice about the food they choose to eat"
+                                        - id: agree-with-veganism-defintion.8
+                                          text: "And that there is no real difference between eating a dog or a pig, cow, chicken"
+                                        - id: agree-with-veganism-defintion.9
+                                          text: "If you still believe you aren't vegan, but interested to give it a shot"
+                                        - id: agree-with-veganism-defintion.10
+                                          text: "You should try challenge22, it's free!"
+                                        - id: agree-with-veganism-defintion.11
+                                          text: "https://challenge22.com"
+                                          url: "https://challenge22.com"
+                                        - id: agree-with-veganism-defintion.12
+                                          text: "Good luck!"
+                                    - id: a.disagree-with-veganism-definition
+                                      text: "I disagree with this statement"
+                                      next:
+                                        - id: q.do-you-believe-dogs-deserve-special-treatment
+                                          text: "Do you believe dogs deserve special treatment?"
+                                          options:
+                                            - id: a.dogs-deserve-special-treatment
+                                              text: "Dogs deserve special treatment over pigs, cows, and/or chickens"
+                                            - id: a.dogs-dont-deserve-special-treatment
+                                              text: "No, they don't"
+                                              next:
+                                                - id: q.do-you-agree-with-dogs-reared-for-meat
+                                                  text: "Do you agree with farming dogs for meat?"
+                                                  options:
+                                                    - id: a.agree-with-dogs-reared-for-meat
+                                                      text: "Yes"
+                                                    - id: a.disagree-with-dogs-reared-for-meat
+                                                      text: "No"
+                                                      next:
+                                                        - !include what-makes-dogs-so-special.yml

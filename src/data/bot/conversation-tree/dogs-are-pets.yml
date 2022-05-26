@@ -1,0 +1,32 @@
+---
+id: a.dogs-are-pets
+text: "Dogs are pets"
+strikethroughIf: a.convinced-of-irrelevance-of-dogs-are-pets
+next:
+  - id: dogs-are-pets.0
+    text: "Some dogs are pets. Some are bred for vivisection. Other are born straight."
+  - id: dogs-are-pets.1
+    text: "Our dogs are reared for their meat and certified not-a-pet. They are bred on farms and tagged at birth. When caught in the wild, they are checked for any micro-chip."
+  - id: dogs-are-pets.2
+    text: "Some pigs are pets, and not bacon"
+    image: "https://media.yourdailydish.com/wp-content/uploads/2016/04/Pig.gif?tr=dpr-3,c-at_max,w-450"
+  - id: dogs-are-pets.3
+    text: "Some chickens are pets, and not nuggets"
+    image: "https://i.gifer.com/embedded/download/Y7rl.gif"
+  - id: dogs-are-pets.4
+    text: "Some cows are pets, and not steak"
+    image: "https://c.tenor.com/WiZww-RTdHQAAAAd/cow-pet.gif"
+  - id: dogs-are-pets.5
+    text: "Give any animal time, care, compassion, and they likely will become your best friend. This trait isn't unique to dogs."
+  - id: q.will-it-stop-you-from-eating-other-s-pets
+    text: "Is that enough of an excuse to stop you from eating other animals because they are pets in the eyes of other people?"
+    options:
+      - !include dogs-are-man-best-friends.yml
+      - id: a.convinced-of-irrelevance-of-dogs-are-pets
+        text: "I am not going to stop eating animals someone else considers as pets"
+        next:
+          - id: convinced-of-irrelevance-of-dogs-are-pets.0
+            text: "And so you shouldn't ask other people to not eat dogs, just because you consider them as pets"
+          - id: convinced-of-irrelevance-of-dogs-are-pets.1
+            text: "So, what is it that makes dogs so special?"
+            goTo: q.what-is-special-about-dogs
