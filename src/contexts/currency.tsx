@@ -16,8 +16,10 @@ const buildCurrencyObject = (currency) => {
   }
 }
 
+const getLocalStorage = () => typeof window !== 'undefined' && window.localStorage
+
 const persistCurrency = (state) => {
-  localStorage.setItem("currency", state.currency)
+  getLocalStorage().setItem("currency", state.currency)
 
   return state
 }
@@ -31,7 +33,7 @@ const currencyReducer = (state, action) => {
 }
 
 export const CurrencyProvider = ({ children }) => {
-  const savedCurrency = localStorage.getItem("currency")
+  const savedCurrency = getLocalStorage().getItem("currency")
   const [state, dispatch] = useReducer(currencyReducer, { currency: savedCurrency || "USD" })
   const value = { state, dispatch }
 
