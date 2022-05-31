@@ -16,6 +16,12 @@ const Checkout = () => {
       <div className="relative">
         <BoxSteps currentStep={2} />
       </div>
+      <div className="container mx-auto md:p-8">
+        <video width="100%" poster="https://watchdominion.org/posters/default.png" controls>
+          <source src="https://watchdominion.org/watch-dominion/en" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </div>
     </>
   )
 }

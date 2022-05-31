@@ -7,8 +7,8 @@ import SelectCurrency from "./select-currency"
 import { CurrencyConsumer } from "../contexts/currency"
 
 const navigation = [
-  { name: 'Why dog meat?', href: '/why-dog-meat' },
-  { name: 'Sourcing', href: '/sourcing' },
+  { name: 'Know your meat', href: 'https://watchdominion.org' },
+  { name: 'Sourcing', href: 'https://www.elwooddogmeat.com' },
 ]
 
 export default function NavBar() {
