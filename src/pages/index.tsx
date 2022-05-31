@@ -399,7 +399,7 @@ const NoPet = ({}) => {
           </div>
         </div>
         <div ref={earTagRef}></div>
-        <div className="md:h-[75vh] md:min-h-[700px] flex flex-col justify-center p-8">
+        <div className="md:h-[75vh] md:min-h-[900px] flex flex-col justify-center p-8">
           <div>
             <h2
               className="text-6xl uppercase font-black text-[#DFC267] pt-0 md:py-12 md:text-9xl"
@@ -434,84 +434,16 @@ const NoPet = ({}) => {
 
 const StillNotConvinced = () => {
   return (
-    <div className="py-12 px-8 md:px-0">
+    <div className="py-12 px-8 md:px-0 my-auto">
       <h2
-        className="text-5xl uppercase font-black text-[#DFC267] pt-0 md:py-12 md:text-9xl"
+        className="text-center text-3xl uppercase font-black text-red-500 pt-0 md:py-12 md:text-7xl"
       >
-        Still not convinced?
+        Backed by doctors
       </h2>
-      <div className="py-12">
-        <h3 className="font-black text-4xl md:text-8xl text-gray-400 pb-12 text-right">
-          "Dogs are intelligent animals and shouldn't be raised for meat"
-        </h3>
-        <p className="font-bold text-2xl md:text-4xl text-gray-300 leading-10 py-4">
-          Dogs are undeniably intelligent. So are cows, chickens, and this one may surprise you even more: fish!
-        </p>
-
-        <p className="font-bold text-2xl md:text-4xl text-gray-300 leading-10 py-4">
-          Pigs have been proven to be equally, if not even more intelligent than dogs.
-        </p>
-        <p className="font-bold text-2xl md:text-4xl text-gray-300 leading-10 py-4">
-          Are you going to stop eating bacon?
-        </p>
-      </div>
-      <div className="py-12">
-        <h3 className="font-black text-4xl md:text-8xl text-gray-400 pb-12 text-right">
-          "Dogs can experience emotions, such as joy and fear. Other animals do not."
-        </h3>
-        <p className="font-bold text-2xl md:text-4xl text-gray-300 leading-10 py-4">
-          All animals you are used to eating are sentient. Beings able to subjectively experience the world around them.
-        </p>
-
-        <p className="font-bold text-2xl md:text-4xl text-gray-300 leading-10 py-4">
-          Dogs aren't an exception, they are just a norm.
-        </p>
-      </div>
-      <div className="py-12">
-        <h3 className="font-black text-4xl md:text-8xl text-gray-400 pb-12 text-right">
-          "Dogs are pets, able to connect with humans"
-        </h3>
-        <p className="font-bold text-2xl md:text-4xl text-gray-300 leading-10 py-4">
-          Some people keep chickens or pigs as pets. Any animals you choose to invest time and try to connect with can become your companion.
-        </p>
-        <p className="font-bold text-2xl md:text-4xl text-gray-300 leading-10 py-4">
-          Farmed animals do not get to experience such connection, hence why we deem it acceptable to eat them.
-        </p>
-        <p className="font-bold text-2xl md:text-4xl text-gray-300 leading-10 py-4">
-          That's why our dogs are reared for meat, and not raised as pets.
-        </p>
-      </div>
-      <div className="py-12">
-        <h3 className="font-black text-4xl md:text-8xl text-gray-400 pb-12 text-right">
-          "It is against my culture to eat dogs"
-        </h3>
-        <p className="font-bold text-2xl md:text-4xl text-gray-300 leading-10 py-4">
-          Good for you!
-
-        </p>
-        <p className="font-bold text-2xl md:text-4xl text-gray-300 leading-10 py-4">
-          We aren't forcing you to eat dogs. It is against some culture to eat animal products you don't think twice about eating.
-        </p>
-        <p className="font-bold text-2xl md:text-4xl text-gray-300 leading-10 py-4">
-          That won't stop you from consuming these products nonetheless.
-        </p>
-        <p className="font-bold text-2xl md:text-4xl text-gray-300 leading-10 py-4">
-          It is your personal choice to consume non-dog meat. It is the personal choice of others to eat dog meat.
-        </p>
-        <p className="font-bold text-2xl md:text-4xl text-gray-300 leading-10 py-4">
-          Live and let live!
-        </p>
-      </div>
-      <div className="py-12">
-        <h3 className="font-black text-4xl md:text-8xl text-gray-400 pb-12 text-right">
-          "It is immoral to eat dogs"
-        </h3>
-        <p className="font-bold text-2xl md:text-4xl text-gray-300 leading-10 py-4">
-          No disrespect intended, but you sound a lot like a vegan.
-        </p>
-        <p className="font-bold text-2xl md:text-4xl text-gray-300 leading-10 py-4">
-          If you eat meat, we don't see a moral difference between eating a pig, cow, chicken, or dog. They are all tasty and nutritious.
-        </p>
+      <div className="py-12 flex justify-center items-center">
+        <div className="drop-shadow-md overflow-hidden rounded-md w-full h-[240px] sm:h-[315px] md:max-w-2xl md:h-[425px] lg:max-w-4xl lg:h-[500px]">
+          <iframe className="w-full h-full" src="https://www.youtube.com/embed/8v2tOYt-Yls" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
       </div>
     </div>
   )
@@ -578,9 +510,9 @@ const IndexPage = () => {
             </div>
           </div>
         </div>
-        <div className="bg-[#22252D]">
+        <div className="bg-[#f1efed]">
           <div className="container mx-auto max-w-7xl">
-            <div className="flex flex-col">
+            <div className="md:min-h-[1000px] h-[100vh] flex flex-col">
               <StillNotConvinced />
             </div>
           </div>
