@@ -25,6 +25,7 @@ import pet from "../images/home/pet.png"
 import collar from "../images/home/collar.png"
 import earTag from "../images/home/ear-tag.png"
 import notDogBadge from "../images/home/not-dog-badge.png"
+import health from "../images/home/health.png"
 
 const Leaf = ({ className, startingPoint, targetElement }) => {
   let originRotation = Math.random() * -100
@@ -434,16 +435,22 @@ const NoPet = ({}) => {
 
 const StillNotConvinced = () => {
   return (
-    <div className="py-12 px-8 md:px-0 my-auto">
-      <h2
-        className="text-center text-3xl uppercase font-black text-red-500 pt-0 md:py-12 md:text-7xl"
-      >
-        Backed by doctors
-      </h2>
-      <div className="py-12 flex justify-center items-center">
-        <div className="drop-shadow-md overflow-hidden rounded-md w-full h-[240px] sm:h-[315px] md:max-w-2xl md:h-[425px] lg:max-w-4xl lg:h-[500px]">
+    <div className="py-12 px-4 md:px-0 my-auto">
+      <div className="py-12 flex justify-center items-center flex-col relative">
+        <div className="w-full md:max-w-2xl lg:max-w-4xl absolute top-[-23%]">
+          <div className="w-[85%] md:w-[50%] mx-auto">
+            <img src={health} className="w-full mx-auto" />
+          </div>
+        </div>
+        <h2
+          className="text-center text-2xl uppercase font-black text-red-400 drop-shadow-sm pt-0 md:text-6xl z-10 pb-[2%]"
+        >
+          <span className="text-red-300">Backed by</span> doctors
+        </h2>
+        <div className="drop-shadow-md overflow-hidden rounded-md w-full h-[240px] sm:h-[315px] md:max-w-2xl md:h-[379px] lg:max-w-4xl lg:h-[504px]">
           <iframe className="w-full h-full" src="https://www.youtube.com/embed/8v2tOYt-Yls" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
+        <a className="mt-12 inline-block bg-red-100 text-red-400 drop-shadow-sm px-4 py-2 text-sm font-bold md:text-lg rounded-md absolute bottom-[-10%] uppercase" href="https://www.cancerresearchuk.org/about-cancer/causes-of-cancer/diet-and-cancer/does-eating-processed-and-red-meat-cause-cancer">Benefits of eating dog meat</a>
       </div>
     </div>
   )
@@ -510,9 +517,9 @@ const IndexPage = () => {
             </div>
           </div>
         </div>
-        <div className="bg-[#f1efed]">
+        <div className="bg-white">
           <div className="container mx-auto max-w-7xl">
-            <div className="md:min-h-[1000px] h-[100vh] flex flex-col">
+            <div className="md:min-h-[1000px] h-[75vh] flex flex-col">
               <StillNotConvinced />
             </div>
           </div>
