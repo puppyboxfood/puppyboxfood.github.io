@@ -38,3 +38,9 @@ options:
         text: "But milk from any other species sounds quite repulsive"
       - id: i-would-not-drink-dog-milk.2
         text: "Even drinking milk from our own species after a certain age can be considered weird"
+      - id: i-would-not-drink-dog-milk.3
+        text: "Check out this video about dairy"
+      - id: i-would-not-drink-dog-milk.4
+        text: "It might change the opinion you have toward dairy"
+      - id: i-would-not-drink-dog-milk.5
+        youtubeVideoId: UcN7SGGoCNI
