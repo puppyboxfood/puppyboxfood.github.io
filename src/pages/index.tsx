@@ -1,10 +1,12 @@
 import React, { useState, useRef, useCallback } from "react"
 import App from "../components/app"
 import Hero from "../components/hero"
+import SlicedSection from "../components/sliced-section"
 import Product from "../components/product"
 import { useCurrency } from "../contexts/currency"
 import { useParallax, ParallaxProvider } from "react-scroll-parallax"
 import heroImage from "../images/branding/dog-in-puppybox-kitchen.png"
+import pigImage from "../images/home/pig.jpg"
 import headshot from "../images/home/dog/headshot.jpg"
 import meatStudio from "../images/home/meat-studio.jpg"
 import dog from "../images/home/dog.png"
@@ -456,6 +458,38 @@ const StillNotConvinced = () => {
   )
 }
 
+const IsThisAJoke = () => {
+  const parallax = useParallax({
+    translateY: [-25, 50, "easeIn"],
+  })
+
+  return (
+    <div ref={parallax.ref} className="flex-1 flex flex-col justify-center items-center">
+      <h2 className="text-gray-600 text-7xl uppercase font-bold text-center">Is this a <span className="text-red-500">joke</span>?</h2>
+    </div>
+  )
+}
+
+const PigMeatIsAJoke = () => {
+  return (
+    <div className="h-[100vh] bg-white relative z-[1]">
+      <SlicedSection
+        image={pigImage}
+        header="Is eating animals, more intelligent than dogs,"
+        secondHeader="a joke?"
+        subtitle={
+          <>
+            <p className="py-2">Pigs have been proven to be more intelligent than dogs.</p>
+            <p className="py-2">This is the world we live in.</p>
+            <p className="py-2">Intelligent animals capable to experiencing emotions are slaughtered for no other reasons than convenience and pleasure we take at eating them.</p>
+          </>
+        }
+        cta="Read more"
+      />
+    </div>
+  )
+}
+
 const IndexPage = () => {
   const [quantity, setQuantity] = useState(0)
   const [dogMeatParallaxEl, setDogMeatParallaxEl]= useState()
@@ -469,6 +503,7 @@ const IndexPage = () => {
     <>
       <div className="h-[100vh] bg-white relative z-[1]">
         <Hero
+          withNav
           image={heroImage}
           header="Dog meat"
           secondHeader="done the right way"
@@ -524,6 +559,14 @@ const IndexPage = () => {
             </div>
           </div>
         </div>
+        <div className="bg-white overflow-hidden">
+          <div className="container mx-auto max-w-7xl">
+            <div className="flex flex-col h-[100vh]">
+              <IsThisAJoke />
+            </div>
+          </div>
+        </div>
+        <PigMeatIsAJoke />
       </ParallaxProvider>
     </>
   )

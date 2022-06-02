@@ -4,7 +4,7 @@ import { MenuIcon, XIcon } from '@heroicons/react/outline'
 import logo from '../images/logo.svg'
 import NavBar from './nav-bar'
 
-export default function Hero({image, header, secondHeader, subtitle, cta}) {
+export default function Hero({image, header, secondHeader, subtitle, cta, withNav}) {
   return (
     <div className="relative bg-white overflow-hidden h-full">
       <div className="max-w-7xl mx-auto h-full">
@@ -19,7 +19,7 @@ export default function Hero({image, header, secondHeader, subtitle, cta}) {
             <polygon points="50,0 100,0 50,100 0,100" />
           </svg>
 
-          <NavBar />
+          {withNav ? <NavBar /> : null}
 
           <main style={{ backgroundImage: `url('${image}')` }} className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 bg-cover bg-center bg-right lg:!bg-none h-full flex items-center justify-center h-[calc(100%-88px)]">
             <div className="text-left h-full flex flex-col justify-between sm:justify-center md:pt-0 pt-20">
