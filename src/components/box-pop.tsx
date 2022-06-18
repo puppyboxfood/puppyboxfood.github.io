@@ -8,7 +8,7 @@ export default ({ quantity, total, currency }) => {
   }
 
   return (
-    <div className="bg-gray-900 sticky bottom-0 left-2 right-2 p-2 shadow-xl z-30">
+    <div className="bg-gray-900 sticky bottom-0 left-2 right-2 p-2 shadow-xl z-[100]">
       <div className="container mx-auto flex items-center justify-end">
         <div>
           <div className="w-full text-gray-500 font-medium sm:text-base text-xs pr-2">

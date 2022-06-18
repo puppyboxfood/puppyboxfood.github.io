@@ -4,7 +4,7 @@ import { MenuIcon, XIcon } from '@heroicons/react/outline'
 import logo from '../images/logo.svg'
 import NavBar from './nav-bar'
 
-export default function Hero({image, header, secondHeader, subtitle, cta}) {
+export default function Hero({image, header, secondHeader, subtitle, cta, ctaUrl}) {
   return (
     <div className="relative bg-white overflow-hidden h-[150vh] lg:h-full flex flex-col-reverse lg:flex-row">
       <div className="max-w-7xl mx-auto h-full flex-1">
@@ -44,7 +44,7 @@ export default function Hero({image, header, secondHeader, subtitle, cta}) {
                 <div className="mt-5 sm:mt-8 sm:flex lg:justify-start">
                   <div className="rounded-md">
                     <a
-                      href="/create-your-box"
+                      href={ctaUrl || "/create-your-box"}
                       className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base uppercase font-medium rounded-md text-red-500 ring-2 ring-red-500 hover:ring-red-600 md:py-4 md:text-lg md:px-10"
                     >
                       {cta}

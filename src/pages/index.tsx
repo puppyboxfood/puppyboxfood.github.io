@@ -485,6 +485,7 @@ const PigMeatIsAJoke = () => {
           </>
         }
         cta="Read more"
+        ctaUrl="https://sentientmedia.org/pig-intelligence/"
       />
     </div>
   )
