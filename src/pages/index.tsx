@@ -450,7 +450,7 @@ const StillNotConvinced = () => {
           <span className="text-red-300">Backed by</span> doctors
         </h2>
         <div className="drop-shadow-md overflow-hidden rounded-md w-full h-[240px] sm:h-[315px] md:max-w-2xl md:h-[379px] lg:max-w-4xl lg:h-[504px]">
-          <iframe className="w-full h-full" src="https://www.youtube.com/embed/8v2tOYt-Yls" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <iframe className="w-full h-full" src="https://www.youtube.com/embed/8v2tOYt-Yls" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
         </div>
         <a className="mt-12 inline-block bg-red-100 text-red-400 drop-shadow-sm px-4 py-2 text-sm font-bold md:text-lg rounded-md absolute bottom-[-10%] uppercase" href="https://www.cancerresearchuk.org/about-cancer/causes-of-cancer/diet-and-cancer/does-eating-processed-and-red-meat-cause-cancer">Benefits of eating dog meat</a>
       </div>
